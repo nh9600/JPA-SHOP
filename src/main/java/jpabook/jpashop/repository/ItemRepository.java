@@ -1,0 +1,33 @@
+package jpabook.jpashop.repository;
+
+import jpabook.jpashop.domain.item.Item;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Repository;
+
+import javax.persistence.EntityManager;
+import java.util.List;
+
+@Repository
+@RequiredArgsConstructor
+public class ItemRepository {
+
+    private final EntityManager em;
+    
+    //저장
+    public void save(Item item){
+        if(item.getId() == null){ //완전히 새로
+            em.persist(item);//신규등록
+        }else{
+            em.merge(item);//이미 db에 등록
+        }
+    }
+
+    public Item findOne(Long id){
+        return em.find(Item.class, id);
+    }
+
+    public List<Item> findALL(){
+        return em.createQuery("select i from Item i", Item.class).getResultList();
+    }
+
+}

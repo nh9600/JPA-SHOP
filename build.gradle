@@ -25,6 +25,7 @@ dependencies {
 	//P6Spy 파라미터 로그 남겨줌
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1'
 	compileOnly 'org.projectlombok:lombok'
+	//h2 DB
 	runtimeOnly 'com.h2database:h2'
 	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
