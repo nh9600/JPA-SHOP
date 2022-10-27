@@ -13,8 +13,7 @@ import static javax.persistence.FetchType.LAZY;
 
 @Entity
 @Table(name = "orders")
-@Getter
-@Setter
+@Getter @Setter
 public class Order {
 
     @Id
@@ -61,7 +60,7 @@ public class Order {
         Order order = new Order();
         order.setMember(member);
         order.setDelivery(delivery);
-        for(OrderItem orderItem : order.orderItems){
+        for(OrderItem orderItem : orderItems){
             order.addOrderItem(orderItem);
         }
         order.setStatus(OrderStatus.ORDER); //연관관계를 걸어줌

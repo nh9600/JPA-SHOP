@@ -1,13 +1,17 @@
 package jpabook.jpashop.domain;
 
 import jpabook.jpashop.domain.item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.stereotype.Repository;
 
 import javax.persistence.*;
 
 @Entity
 @Getter @Setter
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
 
     @Id
@@ -25,6 +29,11 @@ public class OrderItem {
 
     private int orderPrice; //주문 가격
     private int count; //주문 수량
+
+    //@NoArgsConstructor(access = AccessLevel.PROTECTED) 사용하면 안 써도 됨
+  /*  protected OrderItem(){
+
+    }*/
 
     //생성메소드
     public static OrderItem createOrderItem(Item item, int orderPrice, int count){
