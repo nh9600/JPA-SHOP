@@ -22,6 +22,7 @@ dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
 	//P6Spy 파라미터 로그 남겨줌
 	implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.8.1'
 	compileOnly 'org.projectlombok:lombok'

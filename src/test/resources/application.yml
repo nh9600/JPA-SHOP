@@ -5,14 +5,15 @@ spring:
         enabled: true
 
   datasource:
-    url: jdbc:h2:mem:test
+    url: jdbc:h2:tcp://localhost/~/jpashop;MVCC=TRUE  #jdbc:h2:mem:test   <--테스트용
+    username: sa
     username: sa
     password:
     driver-class-name: org.h2.Driver
 
   jpa:
     hibernate:
-      ddl-auto: create #자동으로 테이블을 만들어줌
+      ddl-auto: none #create 자동으로 테이블을 만들어줌
     properties:
       hibernate:
 #        show_sql: true
